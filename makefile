@@ -16,6 +16,9 @@ install:
 install-dev:
 	pip install -e .
 
+uninstall:
+	pip uninstall frenchplotlib
+
 build: clean
 	python3 -m build
 
@@ -24,11 +27,5 @@ clean:
 	find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
 	find . -type f -name "*.pyc" -delete
 
-test:
-	python3 -m pytest test/ -v
-
 upload: build
 	python3 -m twine upload dist/*
-
-lint:
-	python3 -m pylint frenchplotlib/ || true
