@@ -97,7 +97,7 @@ plt.show()
 - `cote_azur` - Mer et ciel méditerranéens
 - `bourgogne` - Couleurs d'automne bourguignonnes
 - `versailles` - Or et splendeur royale
-- `nuit_parisienne` - Or et splendeur royale
+- `nuit_parisienne` - Bleu nuit et lumières dorées
 
 ### Palettes viticoles
 
