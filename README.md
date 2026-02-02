@@ -7,7 +7,7 @@ Une bibliothèque Python pour ajouter une touche française à vos visualisation
 **frenchplotlib** enrichit vos graphiques matplotlib avec :
 
 - 🥐 **17 marqueurs personnalisés** en forme d'icônes françaises (baguette, croissant, vin, fromage, etc.)
-- 🎨 **15 palettes de couleurs** inspirées de la culture française (tricolore, lavande de Provence, Bordeaux, etc.)
+- 🎨 **16 palettes de couleurs** inspirées de la culture française (tricolore, lavande de Provence, Bordeaux, etc.)
 
 ## 🚀 Installation
 
@@ -97,6 +97,7 @@ plt.show()
 - `cote_azur` - Mer et ciel méditerranéens
 - `bourgogne` - Couleurs d'automne bourguignonnes
 - `versailles` - Or et splendeur royale
+- `nuit_parisienne` - Or et splendeur royale
 
 ### Palettes viticoles
 

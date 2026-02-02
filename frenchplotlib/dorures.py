@@ -44,3 +44,6 @@ macaron = ListedColormap(['#FFE4E1', '#FFB6C1', '#DDA0DD', '#B0E0E6', '#98FB98',
 
 # Versailles (or et royal)
 versailles = LinearSegmentedColormap.from_list('versailles', ['#FFF8DC', '#FFD700', '#DAA520', '#B8860B', '#8B7355', '#654321'])
+
+# Nuit parisienne (bleu nuit et lumières dorées)
+nuit_parisienne = LinearSegmentedColormap.from_list('nuit_parisienne', ['#000033', '#000066', '#000099', '#3333FF', '#FFFF00', '#FFD700'])

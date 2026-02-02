@@ -8,7 +8,7 @@ y = np.sin(x)
 
 # Combinaison marqueur + palette de couleurs
 plt.figure(figsize=(12, 6))
-plt.scatter(x, y, c=y, marker=baguetteplot.boule, s=1000, cmap=dorures.escargot_persil)
+plt.scatter(x, y, c=y, marker=baguetteplot.boule, s=1000, cmap=dorures.nuit_parisienne)
 plt.colorbar(label='Valeurs')
 plt.title("Visualisation à la française")
 plt.show()
