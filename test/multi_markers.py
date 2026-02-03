@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from frenchplotlib import baguetteplot, dorures
+from frenchplotlib import dorures, tapisseries
 
 fig, ax = plt.subplots(figsize=(12, 8))
 
 # Différents marqueurs
-marqueurs = [baguetteplot.croissant, baguetteplot.vin, baguetteplot.fromage, baguetteplot.macaron]
+marqueurs = [tapisseries.croissant, tapisseries.vin, tapisseries.fromage, tapisseries.macaron]
 couleurs = ['#FFD700', '#8B0000', '#F5DEB3', '#FFB6C1']
 labels = ['Croissant', 'Vin', 'Fromage', 'Macaron']
 

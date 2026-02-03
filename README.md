@@ -28,7 +28,7 @@ pip install frenchplotlib
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
-from frenchplotlib import baguetteplot
+from frenchplotlib import tapisseries
 
 # Données d'exemple
 x = np.linspace(-1, 1, 20)
@@ -36,7 +36,7 @@ y = np.sin(x)
 
 # Utilisation d'un marqueur en forme de boule de pain
 plt.figure(figsize=(10, 6))
-plt.scatter(x, y, marker=baguetteplot.boule, s=500)
+plt.scatter(x, y, marker=tapisseries.boule, s=500)
 plt.title("Graphique avec marqueur français")
 plt.show()
 ```
@@ -46,7 +46,7 @@ plt.show()
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
-from frenchplotlib import baguetteplot, dorures
+from frenchplotlib import tapisseries, dorures
 
 # Données d'exemple
 x = np.linspace(-1, 1, 20)
@@ -54,13 +54,13 @@ y = np.sin(x)
 
 # Combinaison marqueur + palette de couleurs
 plt.figure(figsize=(12, 6))
-plt.scatter(x, y, c=y, marker=baguetteplot.boule, s=1000, cmap=dorures.escargot_persil)
+plt.scatter(x, y, c=y, marker=tapisseries.boule, s=1000, cmap=dorures.escargot_persil)
 plt.colorbar(label='Valeurs')
 plt.title("Visualisation à la française")
 plt.show()
 ```
 
-## 🥐 Marqueurs disponibles (baguetteplot)
+## 🥐 Marqueurs disponibles (tapisseries)
 
 - `baguette` - Une baguette traditionnelle
 - `pain_de_mie` - Pain de mie
@@ -117,12 +117,12 @@ plt.show()
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
-from frenchplotlib import baguetteplot, dorures
+from frenchplotlib import tapisseries, dorures
 
 fig, ax = plt.subplots(figsize=(12, 8))
 
 # Différents marqueurs
-marqueurs = [baguetteplot.croissant, baguetteplot.vin, baguetteplot.fromage, baguetteplot.macaron]
+marqueurs = [tapisseries.croissant, tapisseries.vin, tapisseries.fromage, tapisseries.macaron]
 couleurs = ['#FFD700', '#8B0000', '#F5DEB3', '#FFB6C1']
 labels = ['Croissant', 'Vin', 'Fromage', 'Macaron']
 
@@ -169,7 +169,7 @@ pip install -e .
 frenchplotlib/
 ├── frenchplotlib/
 │   ├── __init__.py
-│   ├── baguetteplot.py    # Marqueurs personnalisés
+│   ├── tapisseries.py     # Marqueurs personnalisés
 │   └── dorures.py          # Palettes de couleurs
 ├── main.py                 # Exemple d'utilisation
 ├── setup.py

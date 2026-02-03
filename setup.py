@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="frenchplotlib",
-    version="0.5.0",
+    version="1.0.0",
     description="French-themed matplotlib markers and colormaps",
     author="philzphaz",
     url="https://github.com/PhilZPhaZ/frenchplotlib",

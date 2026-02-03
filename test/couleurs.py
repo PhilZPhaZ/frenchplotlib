@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from frenchplotlib import baguetteplot, dorures
+from frenchplotlib import dorures, tapisseries
 
 # Données d'exemple
 x = np.linspace(-1, 1, 20)
@@ -8,7 +8,7 @@ y = np.sin(x)
 
 # Combinaison marqueur + palette de couleurs
 plt.figure(figsize=(12, 6))
-plt.scatter(x, y, c=y, marker=baguetteplot.boule, s=1000, cmap=dorures.nuit_parisienne)
+plt.scatter(x, y, c=y, marker=tapisseries.croissant, s=1000, cmap=dorures.croissant_beurre)
 plt.colorbar(label='Valeurs')
 plt.title("Visualisation à la française")
 plt.show()
