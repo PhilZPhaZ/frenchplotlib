@@ -21,9 +21,17 @@ pip install frenchplotlib
 - matplotlib
 - numpy
 
+### Pour les marqueurs SVG personnalisés (optionnel)
+
+Si vous souhaitez utiliser `load_svg_marker()` pour charger vos propres fichiers SVG :
+
+```bash
+pip install svgpathtools svgpath2mpl
+```
+
 ## 💡 Utilisation
 
-### Marqueurs personnalisés
+### Marqueurs personnalisés prédéfinis
 
 ```python
 import matplotlib.pyplot as plt
@@ -40,6 +48,45 @@ plt.scatter(x, y, marker=tapisseries.boule, s=500)
 plt.title("Graphique avec marqueur français")
 plt.show()
 ```
+
+### Marqueurs personnalisés depuis SVG
+
+Vous pouvez également charger vos propres marqueurs SVG ou utiliser les marqueurs fournis dans le dossier `assets/` :
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+from frenchplotlib.custom_marker import load_svg_marker
+
+# Charger un marqueur SVG personnalisé
+marker = load_svg_marker('frenchplotlib/assets/baguette.svg')
+
+# Ou utilisez votre propre fichier SVG
+# marker = load_svg_marker('chemin/vers/votre/fichier.svg')
+
+# Données d'exemple
+x = np.linspace(-1, 1, 20)
+y = np.sin(x)
+
+# Utilisation du marqueur personnalisé
+plt.figure(figsize=(10, 6))
+plt.scatter(x, y, marker=marker, s=500)
+plt.title("Graphique avec marqueur SVG personnalisé")
+plt.show()
+```
+
+**Avantages des marqueurs SVG personnalisés :**
+- 🎨 Utilisez n'importe quel fichier SVG comme marqueur
+- 🔧 Plus de flexibilité pour créer vos propres designs
+- 📦 Tous les marqueurs français sont disponibles en SVG dans `frenchplotlib/assets/`
+- 🎯 Le marqueur est automatiquement centré et mis à l'échelle
+
+**Fichiers SVG disponibles :**
+- `baguette.svg`, `boule.svg`, `bretzel.svg`, `brioche.svg`
+- `camembert.svg`, `croissant.svg`, `eclair.svg`, `escargot.svg`
+- `fougasse.svg`, `fromage.svg`, `macaron.svg`, `madeleine.svg`
+- `pain_au_chocolat.svg`, `pain_de_mie.svg`, `pita.svg`
+- `religieuse.svg`, `vin.svg`
 
 ### Palettes de couleurs
 
@@ -169,9 +216,17 @@ pip install -e .
 frenchplotlib/
 ├── frenchplotlib/
 │   ├── __init__.py
-│   ├── tapisseries.py     # Marqueurs personnalisés
-│   └── dorures.py          # Palettes de couleurs
-├── main.py                 # Exemple d'utilisation
+│   ├── tapisseries.py       # Marqueurs personnalisés prédéfinis
+│   ├── dorures.py            # Palettes de couleurs
+│   ├── custom_marker.py      # Chargement de marqueurs SVG personnalisés
+│   ├── converter.py          # Conversion de marqueurs
+│   ├── tete.py               # Fonctionnalités de tête
+│   └── assets/               # Fichiers SVG des marqueurs
+│       ├── baguette.svg
+│       ├── boule.svg
+│       ├── croissant.svg
+│       └── ...
+├── test/                     # Exemples de tests
 ├── setup.py
 ├── pyproject.toml
 └── README.md
