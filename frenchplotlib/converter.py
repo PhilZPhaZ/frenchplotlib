@@ -9,7 +9,7 @@ try:
 except ImportError:
     svg2paths2 = None
 
-name = 'escargot'
+name = 'anschutz'
 path = f'assets/{name}.svg'
 
 # Get the directory where this file is located
@@ -67,7 +67,7 @@ sample = f"""
 """
 
 # ecrire à la fin du fichier breadplotlib.py
-breadplotlib_path = os.path.join(current_dir, 'breadplotlib.py')
+breadplotlib_path = os.path.join(current_dir, 'tapisseries.py')
 with open(breadplotlib_path, 'r') as f:
     content = f.read()
 

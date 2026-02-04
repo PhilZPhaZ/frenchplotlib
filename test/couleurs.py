@@ -8,7 +8,7 @@ y = np.sin(x)
 
 # Combinaison marqueur + palette de couleurs
 plt.figure(figsize=(12, 6))
-plt.scatter(x, y, c=y, marker=tapisseries.croissant, s=1000, cmap=dorures.croissant_beurre)
+plt.scatter(x, y, c=y, marker=tapisseries.macaron, s=1000, cmap=dorures.versailles)
 plt.colorbar(label='Valeurs')
 plt.title("Visualisation à la française")
 plt.show()
