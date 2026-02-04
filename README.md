@@ -8,6 +8,7 @@ Une bibliothèque Python pour ajouter une touche française à vos visualisation
 
 - 🥐 **17 marqueurs personnalisés** en forme d'icônes françaises (baguette, croissant, vin, fromage, etc.)
 - 🎨 **16 palettes de couleurs** inspirées de la culture française (tricolore, lavande de Provence, Bordeaux, etc.)
+- 🖼️ **8 styles graphiques prédéfinis** pour transformer l'apparence complète de vos graphiques (Versailles, Bistrot, Côte d'Azur, etc.)
 
 ## 🚀 Installation
 
@@ -107,6 +108,52 @@ plt.title("Visualisation à la française")
 plt.show()
 ```
 
+### Styles graphiques prédéfinis
+
+Appliquez un style complet à tous vos graphiques pour une ambiance française authentique :
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+from frenchplotlib import styles
+
+# Appliquer le style Côte d'Azur
+styles.style_cote_azur()
+
+# Créer des données
+x = np.linspace(0, 2*np.pi, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+# Tous les graphiques suivants auront le style appliqué
+plt.figure(figsize=(10, 6))
+plt.plot(x, y1, linewidth=3, label='Vague 1')
+plt.plot(x, y2, linewidth=3, label='Vague 2')
+plt.fill_between(x, y1, alpha=0.3)
+
+plt.title('🌊 Les Vagues de la Méditerranée')
+plt.xlabel('Distance (km)')
+plt.ylabel('Amplitude (m)')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Restaurer le style par défaut
+styles.restaurer_style()
+```
+
+**Styles disponibles :**
+
+- `styles.style_versailles()` - 👑 Style royal et élégant avec tons dorés
+- `styles.style_bistrot()` - ☕ Ambiance chaleureuse de bistrot parisien
+- `styles.style_cote_azur()` - 🌊 Bleus méditerranéens lumineux
+- `styles.style_provence()` - 💜 Douceur pastel de la lavande provençale
+- `styles.style_parisien()` - 🗼 Élégance minimaliste noir et blanc
+- `styles.style_tricolore()` - 🇫🇷 Patriotique aux couleurs du drapeau
+- `styles.style_bordeaux()` - 🍷 Rouges profonds des vignobles
+- `styles.style_belle_epoque()` - 🎨 Art Nouveau et couleurs organiques
+- `styles.restaurer_style()` - Restaure le style matplotlib par défaut
+
 ## 🥐 Marqueurs disponibles (tapisseries)
 
 - `baguette` - Une baguette traditionnelle
@@ -158,6 +205,39 @@ plt.show()
 - `je_m_en_fous` - Gris perle élégant
 
 ## 📊 Exemples avancés
+
+### Combinaison style + marqueurs + couleurs
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+from frenchplotlib import styles, tapisseries, dorures
+
+# Appliquer un style complet
+styles.style_versailles()
+
+# Créer une visualisation élégante
+fig, ax = plt.subplots(figsize=(12, 8))
+
+x_scatter = np.random.rand(20) * 10
+y_scatter = np.random.rand(20) * 2 - 1
+
+# Utiliser marqueurs français avec le style appliqué
+ax.scatter(x_scatter[:5], y_scatter[:5], marker=tapisseries.croissant, s=500, label='Croissants')
+ax.scatter(x_scatter[5:10], y_scatter[5:10], marker=tapisseries.vin, s=500, label='Vin')
+ax.scatter(x_scatter[10:15], y_scatter[10:15], marker=tapisseries.fromage, s=500, label='Fromage')
+
+ax.set_title('👑 Délices Royaux de Versailles', fontsize=16)
+ax.set_xlabel('Temps (heures)')
+ax.set_ylabel('Satisfaction')
+ax.legend()
+ax.grid(True)
+
+plt.show()
+
+# Restaurer le style
+styles.restaurer_style()
+```
 
 ### Graphique multi-marqueurs
 
@@ -218,6 +298,7 @@ frenchplotlib/
 │   ├── __init__.py
 │   ├── tapisseries.py       # Marqueurs personnalisés prédéfinis
 │   ├── dorures.py            # Palettes de couleurs
+│   ├── styles.py             # Styles graphiques prédéfinis
 │   ├── custom_marker.py      # Chargement de marqueurs SVG personnalisés
 │   ├── converter.py          # Conversion de marqueurs
 │   ├── tete.py               # Fonctionnalités de tête
@@ -226,7 +307,10 @@ frenchplotlib/
 │       ├── boule.svg
 │       ├── croissant.svg
 │       └── ...
-├── test/                     # Exemples de tests
+├── example/                  # Exemples d'utilisation
+│   ├── styles_demo.py        # Démonstration des styles
+│   ├── style_simple.py       # Exemple simple de style
+│   └── ...
 ├── setup.py
 ├── pyproject.toml
 └── README.md
