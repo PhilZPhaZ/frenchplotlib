@@ -47,3 +47,15 @@ versailles = LinearSegmentedColormap.from_list('versailles', ['#FFF8DC', '#FFD70
 
 # Nuit parisienne (bleu nuit et lumières dorées)
 nuit_parisienne = LinearSegmentedColormap.from_list('nuit_parisienne', ['#000033', '#000066', '#000099', '#3333FF', '#FFFF00', '#FFD700'])
+
+# Omelette ratée (du jaune pâle au brun cramé)
+omelette_ratee = LinearSegmentedColormap.from_list('omelette_ratee', ['#FFFFE0', '#FFFACD', '#FAFAD2', '#FFE4B5', '#FFD700', '#8B4513'])
+
+# Grève nationale (rouge militant, noir protestataire)
+greve_nationale = LinearSegmentedColormap.from_list('greve_nationale', ['#FF0000', '#8B0000', '#000000', '#333333', '#666666', '#999999'])
+
+# Metro parisien (Gris métallique, jaune pisse et vert)
+metro_parisien = LinearSegmentedColormap.from_list('metro_parisien', ['#C0C0C0', '#FFFF00', '#ADFF2F', '#7FFF00', '#32CD32', '#228B22'])
+
+# Moutarde de dijon (jaune moutarde agressif)
+moutarde_dijon = LinearSegmentedColormap.from_list('moutarde_dijon', ['#FFFACD', '#FAFAD2', '#FFE4B5', '#FFD700', '#DAA520', '#8B4513'])

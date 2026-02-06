@@ -7,8 +7,9 @@ Une bibliothèque Python pour ajouter une touche française à vos visualisation
 **frenchplotlib** enrichit vos graphiques matplotlib avec :
 
 - 🥐 **17 marqueurs personnalisés** en forme d'icônes françaises (baguette, croissant, vin, fromage, etc.)
-- 🎨 **16 palettes de couleurs** inspirées de la culture française (tricolore, lavande de Provence, Bordeaux, etc.)
+- 🎨 **20 palettes de couleurs** inspirées de la culture française (tricolore, lavande de Provence, grève nationale, etc.)
 - 🖼️ **8 styles graphiques prédéfinis** pour transformer l'apparence complète de vos graphiques (Versailles, Bistrot, Côte d'Azur, etc.)
+- 🎭 **Mode prétentieux** pour rendre vos graphiques ridiculement français avec formulations ampoulées
 
 ## 🚀 Installation
 
@@ -154,6 +155,43 @@ styles.restaurer_style()
 - `styles.style_belle_epoque()` - 🎨 Art Nouveau et couleurs organiques
 - `styles.restaurer_style()` - Restaure le style matplotlib par défaut
 
+### Mode prétentieux
+
+Transformez vos graphiques en chefs-d'œuvre ridiculement français avec la fonction `rendre_pretentieux()` :
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+from frenchplotlib.styles import rendre_pretentieux
+
+# Créer un graphique simple
+x = np.linspace(0, 10, 50)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+ax = plt.subplot(1, 1, 1)
+ax.plot(x, y1, label='sin(x)', color='blue')
+ax.plot(x, y2, label='cos(x)', color='red')
+ax.set_title("Sinus et cosinus")
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.legend()
+
+# Rendre le graphique prétentieux ! 🎭
+rendre_pretentieux(ax, niveau='modere')  # Options: 'modere', 'insupportable', 'academie_francaise'
+
+plt.tight_layout()
+plt.show()
+```
+
+**Niveaux de prétention disponibles :**
+
+- `'modere'` - Prétention légère avec formulations élégantes
+- `'insupportable'` - Jargon pseudo-scientifique insupportable
+- `'academie_francaise'` - Niveau maximal de pédanterie académique
+
+Cette fonction transforme vos titres et labels en versions pompeusement françaises, ajoute des accents circonflexes superflus et des citations prétentieuses. Parfait pour impressionner (ou agacer) vos collègues !
+
 ## 🥐 Marqueurs disponibles (tapisseries)
 
 - `baguette` - Une baguette traditionnelle
@@ -203,6 +241,13 @@ styles.restaurer_style()
 - `escargot_persil` - Marron gris-vert
 - `french_kiss` - Rouge passionnel
 - `je_m_en_fous` - Gris perle élégant
+
+### Palettes humoristiques
+
+- `omelette_ratee` - Du jaune pâle au brun cramé
+- `greve_nationale` - Rouge militant et noir protestataire
+- `metro_parisien` - Gris métallique, jaune et vert
+- `moutarde_dijon` - Jaune moutarde agressif
 
 ## 📊 Exemples avancés
 
@@ -290,32 +335,6 @@ cd frenchplotlib
 pip install -e .
 ```
 
-### Structure du projet
-
-```
-frenchplotlib/
-├── frenchplotlib/
-│   ├── __init__.py
-│   ├── tapisseries.py       # Marqueurs personnalisés prédéfinis
-│   ├── dorures.py            # Palettes de couleurs
-│   ├── styles.py             # Styles graphiques prédéfinis
-│   ├── custom_marker.py      # Chargement de marqueurs SVG personnalisés
-│   ├── converter.py          # Conversion de marqueurs
-│   ├── tete.py               # Fonctionnalités de tête
-│   └── assets/               # Fichiers SVG des marqueurs
-│       ├── baguette.svg
-│       ├── boule.svg
-│       ├── croissant.svg
-│       └── ...
-├── example/                  # Exemples d'utilisation
-│   ├── styles_demo.py        # Démonstration des styles
-│   ├── style_simple.py       # Exemple simple de style
-│   └── ...
-├── setup.py
-├── pyproject.toml
-└── README.md
-```
-
 ## 📄 Licence
 
 Ce projet est sous licence MIT.
@@ -324,10 +343,11 @@ Ce projet est sous licence MIT.
 
 Les contributions sont les bienvenues ! N'hésitez pas à :
 
-- Signaler des bugs
-- Proposer de nouvelles fonctionnalités
-- Ajouter de nouveaux marqueurs ou palettes
-- Améliorer la documentation
+- 🐛 Signaler des bugs
+- 💡 Proposer de nouvelles fonctionnalités
+- 🥐 Ajouter de nouveaux marqueurs ou palettes
+- 📚 Améliorer la documentation
+- 🎨 Créer de nouveaux styles graphiques
 
 ## 🙏 Remerciements
 

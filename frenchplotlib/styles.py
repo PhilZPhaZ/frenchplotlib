@@ -1,6 +1,3 @@
-"""
-Styles graphiques prédéfinis inspirés de la France
-"""
 import matplotlib.pyplot as plt
 from matplotlib import cycler
 import matplotlib as mpl
@@ -234,6 +231,145 @@ def style_belle_epoque():
     plt.rcParams['font.size'] = 11
     plt.rcParams['axes.titlesize'] = 15
     plt.rcParams['axes.titleweight'] = 'bold'
+
+
+def rendre_pretentieux(ax=None, niveau='modere'):
+    """
+    Transforme un graphique en version prétentieuse à la française
+    
+    Ajoute des accents circonflexes superflus, des formulations ampoulées
+    et un air de supériorité culturelle typiquement français.
+    
+    Parameters
+    ----------
+    ax : matplotlib.axes.Axes, optional
+        Les axes à rendre prétentieux. Si None, utilise les axes courants.
+    niveau : str, optional
+        Niveau de prétention : 'modere', 'insupportable', ou 'academie_francaise'
+        Par défaut 'modere'
+        
+    Returns
+    -------
+    ax : matplotlib.axes.Axes
+        Les axes transformés
+        
+    """
+    if ax is None:
+        ax = plt.gca()
+    
+    # Dictionnaires de transformation selon le niveau
+    transformations_moderees = {
+        'graph': 'représentation graphique',
+        'plot': 'tracé illustratif',
+        'data': 'données empiriques',
+        'value': 'valeur numérique',
+        'point': 'coordonnée cartésienne',
+        'line': 'courbe fonctionnelle',
+        'scatter': 'nuage de points discriminants',
+        'bar': 'diagramme en bâtonnets',
+        'time': 'dimension temporelle',
+        'error': 'marge d\'incertitude',
+    }
+    
+    transformations_insupportables = {
+        'graph': 'œuvre visuelle analytique',
+        'plot': 'représentation esthético-scientifique',
+        'data': 'corpus statistique empiriquement validé',
+        'value': 'magnitude quantitative certifiée',
+        'point': 'entité géométrique bidimensionnelle',
+        'line': 'fonction continue différentiable',
+        'scatter': 'distribution stochastique de coordonnées',
+        'bar': 'histogramme à barres juxtaposées',
+        'time': 'continuum spatio-temporel',
+        'error': 'intervalle de confiance probabiliste',
+    }
+    
+    transformations_academie = {
+        'graph': 'œuvre graphique d\'inspiration cartésienne',
+        'plot': 'représentation visuelle de nature épistémologique',
+        'data': 'ensemble de données recueillies selon une méthodologie rigoureuse',
+        'value': 'grandeur numérique établie conformément aux standards académiques',
+        'point': 'élément constitutif d\'un espace vectoriel euclidien',
+        'line': 'manifestation géométrique d\'une relation fonctionnelle',
+        'scatter': 'constellation de points représentatifs d\'une distribution statistique',
+        'bar': 'diagramme en colonnes verticales de hauteurs proportionnelles',
+        'time': 'progression chronologique irréversible',
+        'error': 'marge d\'erreur inhérente aux limitations méthodologiques',
+    }
+    
+    # Sélection du dictionnaire selon le niveau
+    if niveau == 'academie_francaise':
+        transfo = transformations_academie
+        prefix = "Considérations sur "
+        suffix = " (avec toute la rigueur qui s'impose)"
+    elif niveau == 'insupportable':
+        transfo = transformations_insupportables
+        prefix = "Étude approfondie de "
+        suffix = " (analyse critique)"
+    else:  # modere
+        transfo = transformations_moderees
+        prefix = "Analyse de "
+        suffix = ""
+    
+    # Transformer le titre
+    title = ax.get_title()
+    if title:
+        # Ajouter des accents circonflexes aléatoires
+        title_pretentieux = title.replace('a', 'â').replace('e', 'ê').replace('o', 'ô')
+        # Forcer la première lettre en majuscule
+        title_pretentieux = prefix + title_pretentieux.capitalize() + suffix
+        ax.set_title(title_pretentieux, fontsize=14, fontweight='bold', style='italic')
+    else:
+        ax.set_title(prefix + "lâ Représentâtion Grâphique" + suffix, 
+                    fontsize=14, fontweight='bold', style='italic')
+    
+    # Transformer les labels des axes
+    xlabel = ax.get_xlabel()
+    ylabel = ax.get_ylabel()
+    
+    if xlabel:
+        xlabel_pretentieux = xlabel.replace('x', 'χ').replace('X', 'Χ')
+        # Chercher des mots communs à remplacer
+        for simple, pretentieux in transfo.items():
+            if simple.lower() in xlabel.lower():
+                xlabel_pretentieux = pretentieux.capitalize()
+                break
+        ax.set_xlabel(f"Axe des {xlabel_pretentieux}", fontsize=11, style='italic')
+    else:
+        ax.set_xlabel("Axe des âbscisses (dimension horizontâle)", fontsize=11, style='italic')
+    
+    if ylabel:
+        ylabel_pretentieux = ylabel.replace('y', 'ψ').replace('Y', 'Ψ')
+        for simple, pretentieux in transfo.items():
+            if simple.lower() in ylabel.lower():
+                ylabel_pretentieux = pretentieux.capitalize()
+                break
+        ax.set_ylabel(f"Axe des {ylabel_pretentieux}", fontsize=11, style='italic')
+    else:
+        ax.set_ylabel("Axe des ordonnées (dimension verticâle)", fontsize=11, style='italic')
+    
+    # Ajouter une note de bas de graphique prétentieuse
+    citations = [
+        "« Tel Descartes l'eût conçu »",
+        "« Dans la plus pure tradition française »",
+        "« Avec l'élégance qui caractérise notre culture »",
+        "« Conformément aux standards académiques »",
+        "« Selon les principes de l'École Polytechnique »",
+    ]
+    
+    import random
+    citation = random.choice(citations)
+    
+    ax.text(0.98, 0.02, citation, 
+            transform=ax.transAxes,
+            fontsize=8, style='italic', 
+            ha='right', va='bottom',
+            alpha=0.6)
+    
+    # Modifier la grille pour la rendre plus "élégante"
+    ax.grid(True, linestyle=':', alpha=0.3, color='#2C3E50')
+    
+    return ax
 
 
 def restaurer_style():
